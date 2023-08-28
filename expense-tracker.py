@@ -67,7 +67,7 @@ def summarize_expenses(expense_file_path, budget):
     
     print("Expense Summary")
     for key, amount in amount_by_category.items():
-        print(f"  {key}: ${amount:.2f}")
+        print(f"  {key}: ₹{amount:.2f}")
 
     total_spent = sum([x.amount for x in expenses])
     remaining_budget = budget - total_spent
@@ -78,7 +78,7 @@ def summarize_expenses(expense_file_path, budget):
     days_in_month = calendar.monthrange(now.year, now.month)[1]
     remaining_days = days_in_month - now.day
     daily_budget = remaining_budget / remaining_days
-    print(green(f"Budget Per Day: ${daily_budget:.2f}"))
+    print(green(f"Budget Per Day: ₹{daily_budget:.2f}")) 
 
 def green(text):
     return f"\033[92m{text}\033[0m"
